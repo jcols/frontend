@@ -1,0 +1,46 @@
+<div class="container">
+  <h3>Editar proyecto</h3>
+  <form  class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput type="text" name="nombre" [(ngModel)] = "fruitForm.nombre" class="form-control" [errorStateMatcher]="matcher" [formControl]="nombreFormControl" maxlength="40"  />
+      <mat-error *ngIf="nombreFormControl.hasError('minlength') && !nombreFormControl.hasError('required')">
+    Minimo 4 letras
+  </mat-error>
+  <mat-error *ngIf="nombreFormControl.hasError('required')">
+    El nombre es <strong>obligatorio</strong>
+  </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Fecha</mat-label>
+      <input matInput type="date" name="fecha" [(ngModel)] = "fruitForm.fecha" class="form-control" [errorStateMatcher]="matcher" [formControl]="fechaFormControl" />
+      <mat-error *ngIf="fechaFormControl.hasError('required')">
+        La fecha es <strong>obligatoria</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Descripcion</mat-label>
+      <textarea rows="4" matInput type="text" name="descripcion" [(ngModel)] = "fruitForm.descripcion" class="form-control" [errorStateMatcher]="matcher" [formControl]="descripcionFormControl" maxlength="300"></textarea>
+      <mat-error *ngIf="descripcionFormControl.hasError('minlength') && !descripcionFormControl.hasError('required')">
+    Minimo 4 letras
+  </mat-error>
+  <mat-error *ngIf="descripcionFormControl.hasError('required')">
+    La descripcion es <strong>obligatoria</strong>
+  </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Link</mat-label>
+      <input matInput type="url" name="link" [(ngModel)] = "fruitForm.link" class="form-control" [errorStateMatcher]="matcher" [formControl]="linkFormControl" maxlength="60"  />
+      <mat-error *ngIf="linkFormControl.hasError('minlength') && !linkFormControl.hasError('required')">
+    Minimo 4 letras
+  </mat-error>
+  <mat-error *ngIf="linkFormControl.hasError('required')">
+    El link es <strong>obligatorio</strong>
+  </mat-error>
+    </mat-form-field>
+    <br>
+      <div class="example-button-row">
+      <button mat-raised-button (click)="update()">Guardar</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,3 @@
+:host ::ng-deep  .logged {
+  visibility: hidden;
+}

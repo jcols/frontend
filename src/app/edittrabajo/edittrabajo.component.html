@@ -1,0 +1,58 @@
+<div class="container">
+  <h3>Editar trabajo</h3>
+  <form  class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Puesto</mat-label>
+      <input matInput type="text" name="puesto" [(ngModel)] = "fruitForm.puesto" class="form-control" [errorStateMatcher]="matcher" [formControl]="puestoFormControl" maxlength="40"  />
+      <mat-error *ngIf="puestoFormControl.hasError('minlength') && !puestoFormControl.hasError('required')">
+    Minimo 4 letras
+  </mat-error>
+  <mat-error *ngIf="puestoFormControl.hasError('required')">
+    El puesto es <strong>obligatorio</strong>
+  </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Inicio</mat-label>
+      <input matInput type="date" name="inicio" [(ngModel)] = "fruitForm.inicio" class="form-control" [errorStateMatcher]="matcher" [formControl]="inicioFormControl" />
+      <mat-error *ngIf="inicioFormControl.hasError('required')">
+        La fecha es <strong>obligatoria</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Fin</mat-label>
+      <input matInput type="date" name="fin" [(ngModel)] = "fruitForm.fin" class="form-control" [errorStateMatcher]="matcher" [formControl]="finFormControl" />
+      <mat-error *ngIf="finFormControl.hasError('required')">
+        La fecha es <strong>obligatoria</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Empresa</mat-label>
+      <input matInput type="text" name="empresa" [(ngModel)] = "fruitForm.empresa" class="form-control" [errorStateMatcher]="matcher" [formControl]="empresaFormControl" maxlength="40"  />
+      <mat-error *ngIf="empresaFormControl.hasError('minlength') && !empresaFormControl.hasError('required')">
+    Minimo 4 letras
+  </mat-error>
+  <mat-error *ngIf="empresaFormControl.hasError('required')">
+    La empresa es <strong>obligatoria</strong>
+  </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Logo</mat-label>
+      <input matInput type="text" name="logo" [(ngModel)] = "fruitForm.logo" class="form-control" id="txtGrado" />
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Tareas</mat-label>
+      <textarea rows="4" matInput type="text" name="tareas" [(ngModel)] = "fruitForm.tareas" class="form-control" [errorStateMatcher]="matcher" [formControl]="tareasFormControl" maxlength="300"></textarea>
+      <mat-error *ngIf="tareasFormControl.hasError('minlength') && !tareasFormControl.hasError('required')">
+    Minimo 4 letras
+  </mat-error>
+  <mat-error *ngIf="tareasFormControl.hasError('required')">
+    Las tareas son <strong>obligatorias</strong>
+  </mat-error>
+
+    </mat-form-field>
+    <div class="example-button-row">
+      <button mat-raised-button (click)="update()">Guardar</button>
+    </div>
+  </form>
+</div>

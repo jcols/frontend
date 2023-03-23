@@ -1,0 +1,29 @@
+<div class="container">
+  <h3>Nuevo Idioma</h3>
+  <form  class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Idioma</mat-label>
+      <input matInput type="text" name="idioma" [(ngModel)] = "fruitForm.idioma" class="form-control" [errorStateMatcher]="matcher" [formControl]="idiomaFormControl" maxlength="40"  />
+      <mat-error *ngIf="idiomaFormControl.hasError('minlength') && !idiomaFormControl.hasError('required')">
+    Minimo 4 letras
+  </mat-error>
+  <mat-error *ngIf="idiomaFormControl.hasError('required')">
+    El idioma es <strong>obligatorio</strong>
+  </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Grado de habilidad</mat-label>
+      <input matInput type="number" name="grado" [(ngModel)] = "fruitForm.grado" class="form-control" [errorStateMatcher]="matcher" [formControl]="gradoFormControl" min="1" max="100" maxlength="3"/>
+      <mat-error *ngIf="(gradoFormControl.hasError('min') || gradoFormControl.hasError('max')) && !gradoFormControl.hasError('required')">
+        El grado debe ser entre 1 y 100
+      </mat-error>
+      <mat-error *ngIf="gradoFormControl.hasError('required')">
+        El grado es <strong>obligatorio</strong>
+      </mat-error>
+    </mat-form-field>
+    <div class="example-button-row">
+      <button type="button" (click)="create()" class="btn btn-primary">Create</button>
+    </div>
+  </form>
+</div>

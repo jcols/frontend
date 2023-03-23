@@ -1,0 +1,40 @@
+<div class="container">
+  <h3>Nueva educacion</h3>
+  <form  class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Escuela</mat-label>
+      <input matInput type="text" name="escuela" [(ngModel)] = "fruitForm.escuela" class="form-control" [errorStateMatcher]="matcher" [formControl]="escuelaFormControl" maxlength="40"  />
+      <mat-error *ngIf="escuelaFormControl.hasError('minlength') && !escuelaFormControl.hasError('required')">
+    Minimo 4 letras
+  </mat-error>
+  <mat-error *ngIf="escuelaFormControl.hasError('required')">
+    La escuela es <strong>obligatoria</strong>
+  </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Logo</mat-label>
+      <input matInput type="text" name="logo" [(ngModel)] = "fruitForm.logo" class="form-control" id="txtGrado" />
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Titulo</mat-label>
+      <input matInput type="text" name="titulo" [(ngModel)] = "fruitForm.titulo" class="form-control" [errorStateMatcher]="matcher" [formControl]="tituloFormControl" maxlength="40"  />
+      <mat-error *ngIf="tituloFormControl.hasError('minlength') && !tituloFormControl.hasError('required')">
+    Minimo 4 letras
+  </mat-error>
+  <mat-error *ngIf="tituloFormControl.hasError('required')">
+    El titulo es <strong>obligatorio</strong>
+  </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Periodo</mat-label>
+      <input matInput type="date" name="periodo" [(ngModel)] = "fruitForm.periodo" class="form-control" [errorStateMatcher]="matcher" [formControl]="periodoFormControl" />
+  <mat-error *ngIf="tituloFormControl.hasError('required')">
+    El periodo es <strong>obligatorio</strong>
+  </mat-error>
+    </mat-form-field>
+      <div class="example-button-row">
+      <button mat-raised-button (click)="create()">Guardar</button>
+    </div>
+  </form>
+</div>

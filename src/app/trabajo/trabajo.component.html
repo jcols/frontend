@@ -1,0 +1,15 @@
+<div class="w3-container w3-card w3-white w3-margin-bottom">
+  <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Experiencia Laboral<a class="w3-right w3-circle w3-btn w3-tiny w3-pink logged" routerLink="/trabajo/new">+</a></h2>
+  <div *ngFor="let Trabajo of Trabajos">
+  <div class="w3-container">
+
+    <h5 class="w3-opacity"><b>{{ Trabajo.puesto }} / {{ Trabajo.empresa }}</b></h5><img src="{{ Trabajo.logo }}" width="50" height="50" alt="Logo">
+    <a (click)="delete(Trabajo.id)" class="w3-right logged"><i class="fa fa-trash"></i>
+    </a><a [routerLink]="['/trabajo/edit/', Trabajo.id]" class="w3-right logged"><i class="fa fa-pencil"></i></a>
+
+    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{ Trabajo.inicio }} - {{ Trabajo.fin }}</h6>
+    <p>{{ Trabajo.tareas }}</p>
+    <hr>
+  </div>
+</div>
+</div>

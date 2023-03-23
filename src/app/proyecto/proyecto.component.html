@@ -1,0 +1,15 @@
+<div class="w3-container w3-card w3-white">
+  <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-puzzle-piece fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Proyectos<a class="w3-right w3-circle w3-btn w3-tiny w3-pink logged" routerLink="/proyecto/new">+</a></h2>
+  <div *ngFor="let Proyectos of Proyectoss">
+  <div class="w3-container">
+    <h5 class="w3-opacity"><b>{{ Proyectos.nombre }}</b></h5>
+    <a (click)="delete(Proyectos.id)" class="w3-right logged"><i class="fa fa-trash"></i>
+    </a><a [routerLink]="['/proyecto/edit/', Proyectos.id]" class="w3-right logged"><i class="fa fa-pencil"></i></a>
+
+    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{ Proyectos.fecha }}</h6>
+    <p>{{ Proyectos.descripcion }}</p>
+    <a href="https://{{ Proyectos.link }}">{{ Proyectos.link }}</a>
+    <hr>
+  </div>
+  </div>
+</div>

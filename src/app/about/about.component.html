@@ -1,0 +1,14 @@
+<div *ngFor="let About of Abouts">
+    <div class="w3-display-container">
+      <img src="{{ About.foto }}" style="width:100%" alt="Avatar">
+      <div class="w3-display-bottomleft w3-container w3-text-black">
+        <h2>{{ About.nombre }}</h2>
+      </div>
+    </div>
+    <div class="w3-container"><a [routerLink]="['../about/edit/', About.id]" class="w3-right logged"><i class="fa fa-pencil"></i></a>
+      <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ About.titulo }}</p>
+      <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ About.lugar }}</p>
+      <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ About.mail }}</p>
+      <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ About.telefono }}</p>
+      <hr>
+</div>

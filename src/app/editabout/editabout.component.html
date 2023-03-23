@@ -1,0 +1,62 @@
+<div class="container">
+  <h3>Editar datos</h3>
+  <form  class="example-form" >
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput type="text" name="nombre" [(ngModel)] = "fruitForm.nombre" class="form-control" [errorStateMatcher]="matcher" [formControl]="nombreFormControl" maxlength="40"/>
+      <mat-error *ngIf="nombreFormControl.hasError('minlength') && !nombreFormControl.hasError('required')">
+        Minimo 4 letras
+      </mat-error>
+      <mat-error *ngIf="nombreFormControl.hasError('required')">
+        El nombre es <strong>obligatorio</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Foto</mat-label>
+      <input matInput type="text" name="foto" [(ngModel)] = "fruitForm.foto" class="form-control" id="txtGrado" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Titulo</mat-label>
+      <input matInput type="text" name="titulo" [(ngModel)] = "fruitForm.titulo" class="form-control" [errorStateMatcher]="matcher" [formControl]="tituloFormControl" maxlength="40" />
+      <mat-error *ngIf="tituloFormControl.hasError('minlength') && !tituloFormControl.hasError('required')">
+        Minimo 4 letras
+      </mat-error>
+      <mat-error *ngIf="tituloFormControl.hasError('required')">
+        El titulo es <strong>obligatorio</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Lugar</mat-label>
+      <input matInput type="text" name="lugar" [(ngModel)] = "fruitForm.lugar" class="form-control" [errorStateMatcher]="matcher" [formControl]="lugarFormControl" maxlength="40" />
+      <mat-error *ngIf="lugarFormControl.hasError('minlength') && !lugarFormControl.hasError('required')">
+        Minimo 4 letras
+      </mat-error>
+      <mat-error *ngIf="lugarFormControl.hasError('required')">
+        El nombre es <strong>obligatorio</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Mail</mat-label>
+      <input matInput type="email" name="mail" [(ngModel)] = "fruitForm.mail" class="form-control" [errorStateMatcher]="matcher" [formControl]="emailFormControl" maxlength="40"/>
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Por favor ingrese su email
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        El Email es <strong>obligatorio</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Telefono</mat-label>
+      <input matInput type="number" name="telefono" [(ngModel)] = "fruitForm.telefono" class="form-control" [errorStateMatcher]="matcher" [formControl]="telefonoFormControl" maxlength="40"/>
+      <mat-error *ngIf="telefonoFormControl.hasError('minlength') && !telefonoFormControl.hasError('required')">
+        Ingrese al menos 4 numeros
+      </mat-error>
+      <mat-error *ngIf="telefonoFormControl.hasError('required')">
+        El telefono es <strong>obligatorio</strong>
+      </mat-error>
+    </mat-form-field>
+    <div class="example-button-row">
+      <button mat-raised-button (click)="update()">Guardar</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h3>Edit Item</h3>
+  <form  class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" name="name" [(ngModel)] = "fruitForm.name" class="form-control" id="txtName" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput type="text" name="price" [(ngModel)] = "fruitForm.price" class="form-control" id="txtPrice" />
+    </mat-form-field>
+    <div class="example-button-row">
+      <button mat-raised-button (click)="update()">Guardar</button>
+    </div>
+  </form>
+</div>
